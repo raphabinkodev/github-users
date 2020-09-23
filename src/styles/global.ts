@@ -8,13 +8,17 @@ export default createGlobalStyle`
     outline: none;
   }
   body {
-    background: #E5E5E5;
+    background: #CCC;
     -webkit-font-smoothing: antialiased;
   }
 
   body,
   input,
   button {
-    font: 1.25rem Archiv, sans-serif;
+    font: 1.25rem Archivo, sans-serif;
+  }
+
+  button {
+    cursor: pointer;
   }
 `;
