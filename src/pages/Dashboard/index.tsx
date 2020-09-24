@@ -1,4 +1,6 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { FiChevronRight } from 'react-icons/fi';
 import {
   Container, Title, Form, Users, Error,
 } from './styles';
@@ -9,12 +11,24 @@ interface User {
   avatar_url: string
   bio: string
   repos_url: string
+  login: string
 }
 
 const Dashboard: React.FC = () => {
   const [newUser, setNewUser] = useState('');
   const [inputError, setInputError] = useState('');
-  const [users, setUser] = useState<User[]>([]);
+  const [users, setUser] = useState<User[]>(() => {
+    const storagedUsers = localStorage.getItem('@GithubUsers:users');
+
+    if (storagedUsers) {
+      return JSON.parse(storagedUsers);
+    }
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('@GithubUsers:users', JSON.stringify(users));
+  }, [users]);
 
   async function handleAddUser(
     event: FormEvent<HTMLFormElement>,
@@ -56,13 +70,15 @@ const Dashboard: React.FC = () => {
         { inputError && <Error>{inputError}</Error>}
         <Users>
           {users.map(user => (
-            <a key={user.name} href={user.repos_url}>
+            <Link key={user.name} to={`/users/${user.login}/repos`}>
               <img src={user.avatar_url} alt={user.avatar_url} />
               <div>
                 <strong>{user.name}</strong>
                 <p>{user.bio}</p>
               </div>
-            </a>
+              <FiChevronRight />
+            </Link>
+
           ))}
         </Users>
       </Container>

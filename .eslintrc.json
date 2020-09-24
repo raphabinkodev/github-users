@@ -34,6 +34,8 @@
       "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
       "import/prefer-default-export": "off",
       "no-use-before-define": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "react/jsx-no-target-blank": "off",
       "camelcase": "off",
       "no-unused-vars": "off",
       "arrow-parens":"off",
