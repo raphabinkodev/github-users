@@ -51,6 +51,7 @@ export const Error = styled.span`
 export const Users = styled.div`
   max-width: 60rem;
   margin-top: 80px;
+  z-index: 1;
 
   a {
     display: flex;

@@ -32,6 +32,7 @@ export const Container = styled.div`
 export const UserInfo = styled.section`
   max-width: 56rem;
   margin: 30px auto;
+  z-index: 1;
 
   header {
     display: flex;
