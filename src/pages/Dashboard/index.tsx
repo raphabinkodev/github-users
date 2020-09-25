@@ -78,7 +78,6 @@ const Dashboard: React.FC = () => {
               </div>
               <FiChevronRight />
             </Link>
-
           ))}
         </Users>
       </Container>
