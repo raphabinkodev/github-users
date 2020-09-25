@@ -21,7 +21,6 @@ export const Container = styled.div`
       text-decoration: none;
       color: #a8a8a3;
       transition: color .2s;
-
       &:hover {
         color: #666;
       }
@@ -32,7 +31,6 @@ export const Container = styled.div`
 export const UserInfo = styled.section`
   max-width: 56rem;
   margin: 30px auto;
-  z-index: 1;
 
   header {
     display: flex;
@@ -99,6 +97,8 @@ export const Repositories = styled.div`
     background-color: #FFF;
     border-radius: 8px;
     transition: transform 0.3s;
+    z-index: 1;
+
 
     &:hover {
       transform: translateX(10px)

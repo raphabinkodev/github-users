@@ -51,7 +51,6 @@ export const Error = styled.span`
 export const Users = styled.div`
   max-width: 60rem;
   margin-top: 80px;
-  z-index: 1;
 
   a {
     display: flex;
@@ -62,6 +61,7 @@ export const Users = styled.div`
     background-color: #FFF;
     border-radius: 8px;
     transition: transform 0.3s;
+    z-index: 1;
 
     &:hover {
       transform: translateX(10px)
