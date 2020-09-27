@@ -38,6 +38,7 @@ export const Error = styled.div`
 
   img {
     width: 480px;
+    padding: 0 20px;
     margin-top: 60px;
   }
 `;
@@ -81,7 +82,7 @@ export const UserInfo = styled.section`
     li {
 
       & + li {
-        margin-left: 80px;
+        margin-left: 60px;
       }
 
       strong {
@@ -91,6 +92,7 @@ export const UserInfo = styled.section`
       }
       span {
         display: block;
+        padding: 0 2%;
         font-size: 18px;
         color: #737380;
       }
