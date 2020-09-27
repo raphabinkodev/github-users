@@ -39,6 +39,7 @@ const Dashboard: React.FC = () => {
     event.preventDefault();
     if (!newUser) {
       setInputError('Digite um nome de usuário válido!');
+
       return;
     }
     try {
