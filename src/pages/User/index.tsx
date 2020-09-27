@@ -78,7 +78,7 @@ const Repos: React.FC = () => {
 
       <Repositories>
         {repositories.map(repository => (
-          <a key={repository.id} href={repository.html_url} target="_blank">
+          <a key={repository.id} href={repository.html_url} target="_blank" rel="noopener noreferrer">
             <div>
               <strong>{repository.name}</strong>
               <p>{repository.description}</p>

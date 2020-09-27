@@ -1,12 +1,15 @@
-import React, { useState, FormEvent, useEffect } from 'react';
+import React, {
+  useState, FormEvent, useEffect,
+} from 'react';
 import { Link } from 'react-router-dom';
-import { FiChevronRight } from 'react-icons/fi';
+import { FiChevronRight, FiTrash2 } from 'react-icons/fi';
 import {
   Container, Title, Form, Users, Error,
 } from './styles';
 import api from '../../services/api';
 
 interface User {
+  id: number
   name: string
   avatar_url: string
   bio: string
@@ -51,6 +54,12 @@ const Dashboard: React.FC = () => {
     }
   }
 
+  function handleRemoveUser(id: number) {
+    const newUsers = users.filter((user) => user.id !== id);
+
+    setUser(newUsers);
+  }
+
   return (
     <>
       <Container>
@@ -70,14 +79,19 @@ const Dashboard: React.FC = () => {
         { inputError && <Error>{inputError}</Error>}
         <Users>
           {users.map(user => (
-            <Link key={user.name} to={`/users/${user.login}/repos`}>
-              <img src={user.avatar_url} alt={user.avatar_url} />
-              <div>
-                <strong>{user.name}</strong>
-                <p>{user.bio}</p>
-              </div>
-              <FiChevronRight />
-            </Link>
+            <div key={user.id}>
+              <Link to={`/users/${user.login}/repos`}>
+                <img src={user.avatar_url} alt={user.avatar_url} />
+                <div>
+                  <strong>{user.name}</strong>
+                  <p>{user.bio}</p>
+                </div>
+                <FiChevronRight />
+              </Link>
+              <button type="button" onClick={() => handleRemoveUser(user.id)}>
+                <FiTrash2 />
+              </button>
+            </div>
           ))}
         </Users>
       </Container>

@@ -41,7 +41,7 @@
       "arrow-parens":"off",
       "prettier/prettier": 0,
       "@typescript-eslint/explicit-function-return-type": [
-        "error",
+        "off",
         {
           "allowExpressions": true
         }

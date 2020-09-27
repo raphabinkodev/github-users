@@ -49,31 +49,38 @@ export const Error = styled.span`
 `;
 
 export const Users = styled.div`
+  > div {
+  display: flex;
+  align-items: center;
   max-width: 60rem;
   margin-top: 80px;
+  background-color: #FFF;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  z-index: 1;
 
-  a {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    text-decoration: none;
-    padding: 20px 10px 10px 20px;
-    background-color: #FFF;
-    border-radius: 8px;
-    transition: transform 0.3s;
-    z-index: 1;
+    & + div {
+      margin-top: 20px;
+    }
 
     &:hover {
       transform: translateX(10px)
     }
 
+    a {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-decoration: none;
+    padding: 20px 10px 10px 20px;
+
     & + a {
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     img {
     display: flex;
-    align-content: center;
+    align-items: center;
     max-width: 80px;
     border-radius: 50%;
     }
@@ -97,7 +104,16 @@ export const Users = styled.div`
     }
     svg {
         margin-left: auto;
-        color: #cbcbd6;
       }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #FFF;
+    padding: 8px;
+    margin-top: 8px;
+  }
   }
 `;
