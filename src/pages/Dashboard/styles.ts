@@ -104,6 +104,11 @@ export const Users = styled.div`
     }
     svg {
         margin-left: auto;
+        color: #222;
+
+        &:hover {
+          color: #506C64;
+        }
       }
   }
 
@@ -114,6 +119,10 @@ export const Users = styled.div`
     background-color: #FFF;
     padding: 8px;
     margin-top: 8px;
+
+    &:hover {
+      color: #c53030;
+    }
   }
   }
 `;
