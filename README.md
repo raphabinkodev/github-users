@@ -1,7 +1,16 @@
 # Github Users
 
+## Aplicação
+<center><img src="src/assets/GitUsers.png" width=850px /></center>
+<br /> <br />
 
+<center><img src="src/assets/GitUsers2.png" width=850px /></center>
+
+<br/> <br/>
 Projeto desenvolvido individualmente com API do Github, utilizando ReactJS (TypeScript).
+
+### API
+<a href="https://api.github.com/">Clique aqui</a>
 
 ## Instalação
 

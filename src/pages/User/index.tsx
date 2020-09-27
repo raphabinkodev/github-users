@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FiChevronsLeft, FiChevronRight } from 'react-icons/fi';
-import { Container, UserInfo, Repositories } from './style';
+import {
+  Container, UserInfo, Repositories, Error,
+} from './style';
 import githubLogo from '../../assets/GitHub_Logo.png';
+import errorImage from '../../assets/404-error.svg';
 import api from '../../services/api';
 
 interface RepositoriesParams {
@@ -25,18 +28,23 @@ interface Repo {
   html_url: string
 }
 
-const Repos: React.FC = () => {
+const UsersRepos: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const [repositories, setRepositories] = useState<Repo[]>([]);
+  const [error, setError] = useState('');
 
   const { login } = useParams<RepositoriesParams>();
 
   useEffect(() => {
     api.get(`/users/${login}`).then(response => {
       setUser(response.data);
+    }).catch(() => {
+      setError('Este usuário não é valido.');
     });
     api.get(`/users/${login}/repos`).then(response => {
       setRepositories(response.data);
+    }).catch(() => {
+      setError('Este usuário não é valido.');
     });
   }, [login]);
   return (
@@ -50,6 +58,7 @@ const Repos: React.FC = () => {
           </Link>
         </div>
       </Container>
+      {error && <Error>{error} <img src={errorImage} alt="" /></Error>}
       {user && (
         <UserInfo>
           <header>
@@ -91,4 +100,4 @@ const Repos: React.FC = () => {
   );
 };
 
-export default Repos;
+export default UsersRepos;

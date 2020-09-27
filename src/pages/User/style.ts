@@ -28,6 +28,20 @@ export const Container = styled.div`
   }
 `;
 
+export const Error = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  color: #C53030;
+  font-size: 24px;
+
+  img {
+    width: 480px;
+    margin-top: 60px;
+  }
+`;
+
 export const UserInfo = styled.section`
   max-width: 56rem;
   margin: 0 auto;
