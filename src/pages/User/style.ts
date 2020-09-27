@@ -30,7 +30,8 @@ export const Container = styled.div`
 
 export const UserInfo = styled.section`
   max-width: 56rem;
-  margin: 30px auto;
+  margin: 0 auto;
+  padding: 30px 20px;
 
   header {
     display: flex;
@@ -85,7 +86,8 @@ export const UserInfo = styled.section`
 
 export const Repositories = styled.div`
   max-width: 56rem;
-  margin: 80px auto;
+  margin: 0 auto;
+  padding: 60px 20px;
 
   a {
     display: flex;

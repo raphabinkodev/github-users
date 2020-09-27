@@ -42,16 +42,23 @@ const Dashboard: React.FC = () => {
 
       return;
     }
+    const userExists = users.find(user => user.login === newUser);
+
+    if (userExists) {
+      setInputError('Usuário já cadastrado');
+
+      return;
+    }
+
     try {
       const response = await api.get(`/users/${newUser}`);
-
       const user = response.data;
 
       setUser([...users, user]);
       setNewUser('');
       setInputError('');
     } catch (err) {
-      setInputError('Erro na busca por este usuário!');
+      setInputError('Usuário inexistente!');
     }
   }
 
